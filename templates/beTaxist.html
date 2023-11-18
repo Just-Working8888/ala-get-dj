@@ -24,7 +24,7 @@
   </div>
 </main>
 <!-- main end -->
-<div class="MainContainer cardFlex ">
+<div class="MainContainer cardFlex beTax ">
   <div class="mainTitle">
     <h1 style="color: black !important;">{{betaxist.join_title}}</h1>
 
@@ -33,7 +33,7 @@
     </h3>
     <div class="orangeBGbutton">{{settings.install}}</div>
   </div>
-  <div class="mainCarImage">
+  <div style="position: relative !important;" class="mainCarImage">
     <img src="{{betaxist.join_image.url}}" alt="" />
   </div>
 
@@ -62,14 +62,14 @@
     {% if forloop.last %}
     {% else %}
     <div class="stepLine">
-     
+
       {% endif %}
       {% endfor %}
-   
+
     </div>
 
 
-   
+
 
 
   </div>
