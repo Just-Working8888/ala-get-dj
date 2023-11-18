@@ -1,0 +1,206 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+{% include 'include/header.html' %}
+  <!-- header end -->
+
+  <!-- header end -->
+  <!-- main start -->
+  <main id="main" class="main">
+    <img id="myElement" class="Mainbackround" src="{{delivery.banner_image.url}}" alt="" />
+    <div class="overlay"></div>
+    <div class=" taxi mainTitle">
+      <h1 class="yellow">{{delivery.title}}</h1>
+
+      <h3 class="white">
+        {{delivery.descriptions}}
+      </h3>
+      <div class="mainButton borderYellow">{{settings.install}}</div>
+    </div>
+    <div style="width: 100%;"></div>
+    <div class="mainCarImage">
+
+    </div>
+  </main>
+  <!-- main end -->
+  <section class="cardgoProof deliveryFlex">
+    <div class="leftInfo">
+      <h1 style="font-size: 48px;">{{delivery.trust_title}}</h1>
+      <br>
+      <br>
+      <div class="cardFlex">
+        <img height="40px" src="{% static 'assets/icons/_2254536808176.svg' %}" alt="">
+        <p>{{delivery.trust_descriptions}}</p>
+      </div>
+      <br>
+      <div class="cardFlex">
+        <img height="40px" src="{% static 'assets/icons/_2254536808176.svg' %}" alt="">
+        <p>{{delivery.trust_descriptions2}}</p>
+      </div>
+    </div>
+    <div class="rightInfo">
+      <img src="{{delivery.trust_image.url}}" alt="">
+    </div>
+  </section>
+  <!-- service start -->
+  <section class="darkSection">
+    <section class="cardgoProof">
+      <h1 class="yellow">Приложение для выгодных грузоперевозок</h1>
+      <br>
+      <br>
+      <div class="cardgoProofContiner">
+        {% for profitable in profitable %}
+        <div class="cargoCard">
+          <div><img src="{{profitable.image.url}}" alt=""></div>
+          <h1>{{profitable.title}}</h1>
+          <h2 class="white">{{profitable.descriptions}}</h2>
+  
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </section>
+
+  <!-- service end -->
+  <br><br>
+  <!-- swiper start -->
+  <section>
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+
+        <div class="swiper-slide">
+          {% for typestaxi in typestaxi %} 
+          <div style="flex-direction: column;gap: 2rem;" class="aboutAppCard">
+            <h1 class="yellow">{{typestaxi.slide_title}}</h1>
+            <div class="flex">
+              <div class="aboutCardRight">
+                <div class="miniCard">
+                  <div class="aboutCardRight">
+                    <h1>{{typestaxi.title}}</h1>
+                    <br>
+                    <p>{{typestaxi.descriptions}}</p>
+                  </div>
+                  <div class="aboutCardRight">
+                    <div class="aboutCardImage">
+                      <img
+                        src="{{typestaxi.image.url}}"
+                        alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="aboutCardRight">
+                <div class="miniCard">
+                  <div class="aboutCardRight">
+                    <h1>{{typestaxi.title2}}</h1>
+                    <br>
+                    <p>{{typestaxi.descriptions2}}</p>
+                  </div>
+                  <div class="aboutCardRight">
+                    <div class="aboutCardImage">
+                      <img
+                        src="{{typestaxi.image2.url}}"
+                        alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          {% endfor %}
+        </div>
+
+
+      </div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect x="24" y="24" width="24" height="24" rx="5" transform="rotate(180 24 24)" fill="#F8AE21" />
+          <path
+            d="M18 13C18.5523 13 19 12.5523 19 12C19 11.4477 18.5523 11 18 11V13ZM4.79289 11.2929C4.40237 11.6834 4.40237 12.3166 4.79289 12.7071L11.1569 19.0711C11.5474 19.4616 12.1805 19.4616 12.5711 19.0711C12.9616 18.6805 12.9616 18.0474 12.5711 17.6569L6.91421 12L12.5711 6.34315C12.9616 5.95262 12.9616 5.31946 12.5711 4.92893C12.1805 4.53841 11.5474 4.53841 11.1569 4.92893L4.79289 11.2929ZM18 11H5.5V13H18V11Z"
+            fill="white" />
+        </svg>
+      </div>
+      <div class="swiper-button-next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect width="24" height="24" rx="5" fill="#F8AE21" />
+          <path
+            d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM19.2071 12.7071C19.5976 12.3166 19.5976 11.6834 19.2071 11.2929L12.8431 4.92893C12.4526 4.53841 11.8195 4.53841 11.4289 4.92893C11.0384 5.31946 11.0384 5.95262 11.4289 6.34315L17.0858 12L11.4289 17.6569C11.0384 18.0474 11.0384 18.6805 11.4289 19.0711C11.8195 19.4616 12.4526 19.4616 12.8431 19.0711L19.2071 12.7071ZM6 13H18.5V11H6V13Z"
+            fill="white" />
+        </svg>
+      </div>
+
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+  </section>
+  <!-- swiper end -->
+  <section class="instructionSection">
+    <h1>{{taxi.title_order2}}</h1>
+    <br><br><br>
+    <div class="instructionContainer">
+      {% for orderintercity in orderintercity %}
+      <div class="instructionCard Dark">
+        <div class="instrukionImage"><img src="{{orderintercity.image.url}}" alt=""></div>
+        <h1 class="white">
+          <div class="stepItem white">
+            <div>{{orderintercity.numbers}}</div>
+          </div>{{orderintercity.title}}
+        </h1>
+        <p class='white'>{{orderintercity.descriptions}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <!-- Proof start -->
+  <section class="Proof">
+    <div class="ProofContiner">
+      <h1>{{whys.why}}</h1>
+      <br />
+      <br />
+      <div class="proofList">
+        {% for why in why %}
+        <div class="proofListItem">
+          <div class="proofItemTop">
+            <h1>{{why.title}}</h1>
+            <img src="{{why.image.url}}" alt="" />
+          </div>
+          <br />
+          <div class="proofItemMain">
+            <p>{{why.descriptions}}
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- Proof end -->
+  <!-- preFooter start -->
+  <section class="preFooter">
+    <div class="taxi preFooterLeft">
+      <h1>{{earn.title}}</h1>
+
+      <br />
+      <p>{{earn.descriptions}}</p>
+      <br />
+      <button class="orangeBGbutton">{{settings.install}}</button>
+    </div>
+    <div style="width: 100%;"></div>
+    <div class="preFooterRigth">
+      <div class="taxiPreFooterImg">
+        <img src="{{earn.image.url}}" alt="" />
+      </div>
+    </div>
+  </section>
+  <!-- preFooter end -->
+  
+
+{% include 'include/footer.html' %}
+
+{%endblock%}

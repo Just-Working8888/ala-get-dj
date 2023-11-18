@@ -1,0 +1,101 @@
+{%extends 'homepage.html'%}
+{%load static%}
+{%block content%}
+
+{% include 'include/header.html' %}
+<!-- header end -->
+
+<!-- header end -->
+<!-- main start -->
+<main id="main" class="main">
+  <img id="myElement" style="padding-top: 15vh;" class="Mainbackround" src="{{betaxist.banner_image.url}}" alt="" />
+  <div class="overlay"></div>
+  <div class=" taxi mainTitle">
+    <h1 class="yellow">{{betaxist.title}}</h1>
+
+    <h3>
+      {{betaxist.title2}}
+    </h3>
+    <div class="mainButton borderYellow">{{settings.install}}</div>
+  </div>
+  <div style="width: 100%;"></div>
+  <div class="mainCarImage">
+
+  </div>
+</main>
+<!-- main end -->
+<div class="MainContainer cardFlex ">
+  <div class="mainTitle">
+    <h1 style="color: black !important;">{{betaxist.join_title}}</h1>
+
+    <h3 style="color: black !important;">
+      {{betaxist.join_descriptions}}
+    </h3>
+    <div class="orangeBGbutton">{{settings.install}}</div>
+  </div>
+  <div class="mainCarImage">
+    <img src="{{betaxist.join_image.url}}" alt="" />
+  </div>
+
+</div>
+
+
+<section class="darkSection">
+  <div class="Instruktion">
+    <h1>КАК ЖЕ НАЧАТЬ ЗАРАБАТЫВАТЬ С ALAGET?</h1>
+    <p>инструкция для водителей</p>
+    <br>
+    <br>
+
+    <div class="stepBar">
+      {% for earnnoney in earnnoney %}
+    </div>
+    <div class="stepItem">
+      <div>{{ earnnoney.numbers }}</div>
+      <article>
+        <p>{{ earnnoney.title }}</p>
+        <h5>{{ earnnoney.descriptions|default:"" }}</h5>
+      </article>
+    </div>
+
+
+    {% if forloop.last %}
+    {% else %}
+    <div class="stepLine">
+     
+      {% endif %}
+      {% endfor %}
+   
+    </div>
+
+
+   
+
+
+  </div>
+  </div>
+</section>
+
+<!-- preFooter start -->
+<section class="preFooter">
+  <div class="preFooterLeft">
+    <p>
+      Приложение Alaget является участником движения «За экологию
+      Кыргызстана». <u>1 % всех доходов от проекта</u> направляется в фонд
+      поддержки экологии Кыргызстана!
+    </p>
+    <br />
+    <p>Прими участи и ты!</p>
+    <br />
+    <button class="orangeBGbutton">УСТАНОВИТЬ ПРИЛОЖЕНИЕ</button>
+  </div>
+  <div class="preFooterRigth">
+    <div class="preFooterImage">
+      <img src="{% static 'assets/img/8 1.png' %}" alt="" />
+    </div>
+  </div>
+</section>
+<!-- preFooter end -->
+{% include 'include/footer.html' %}
+
+{%endblock%}
