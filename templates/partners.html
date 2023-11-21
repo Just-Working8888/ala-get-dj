@@ -19,7 +19,7 @@
 <body>
     <!-- header start -->
 
-    
+
     {% include 'include/header.html' %}
     <!-- header end -->
 
@@ -117,6 +117,77 @@
 
 
     </section>
+    <section class="partGroup">
+        <div class="partGroupContainer">
+            <div class="partGroupTop">
+                <h1>{{partners.local_title}}</h1>
+
+            </div>
+            <br>
+            <div class="partGroupBop">
+                <div class="partBotImage">
+                    <img src="{% static 'assets/img/Стойка в кривых 4 (1).svg' %}" alt="">
+                </div>
+                <div class="partTitle">
+                    <p>{{partners.local_descriptions}}
+
+                    </p>
+                    <br>
+                    <h5>
+                        {{partners.local_title2}}</h5>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section class="partners">
+        <div class="swiper-container">
+
+            <!-- additional required wrapper -->
+            <div class="swiper-wrapper">
+
+                <!-- slides -->
+                {% for partnersslider in partnersslider %}
+                <div style="width: 240px; overflow: unset;" class="swiper-slide">
+                    <div style="margin:0;" class="product">
+
+                        <div class="partCard">
+                            <div class="partCardImage">
+                                <img src="{{partnersslider.image.url}}" alt="">
+                            </div>
+                            <h1>
+                                {{partnersslider.title}}
+                            </h1>
+                        </div>
+                    </div>
+                    <svg class="produckSvg" style="position: absolute;right: -5px;z-index: 111111;" xmlns="http://www.w3.org/2000/svg"
+                    width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <circle cx="15" cy="15" r="15" fill="#F1BA01" />
+                    <path d="M13 9C13 9 19.7613 15.5 19.9945 15.5C20.2276 15.5 13 22 13 22" stroke="white"
+                        stroke-width="3" stroke-linecap="round" />
+                </svg>
+                   
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <!-- pagination -->
+            <div style="display: none;" class="swiper-pagination"></div>
+
+            <!-- navigation buttons -->
+            <div style="display: none;" class="swiper-button-prev"></div>
+            <div style="display: none;" class="swiper-button-next"></div>
+
+        </div>
+
+
+
+    </section>
+
 
 
     <section class="formSection">
@@ -141,12 +212,12 @@
             <h1>{{contact.title_form}}</h1>
 
             <input id="id_firstname" name="firstname" placeholder="{{contact.firstname}}" type="text">
-     
+
             <input id="id_name_company" name="name_company" placeholder="{{contact.name_company}}" type="text">
-        
+
 
             <input id="id_number_email" name="number_email" placeholder="{{contact.number_email}}" type="text">
-        
+
             <button type="submit" class="formButton">Оставить заявку</button>
         </form>
     </section>

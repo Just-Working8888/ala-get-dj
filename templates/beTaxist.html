@@ -44,34 +44,42 @@
   <div class="Instruktion">
     <h1>КАК ЖЕ НАЧАТЬ ЗАРАБАТЫВАТЬ С ALAGET?</h1>
     <p>инструкция для водителей</p>
-    <br>
-    <br>
+ 
 
-    <div class="stepBar">
-      {% for earnnoney in earnnoney %}
+    <div style="position: relative;" class="stepBarConyainer">
+      <div class="stepLine">
+        <div class="stepMainLine"></div>
+
+      </div>
+      <div class="stepBar">
+        {% for earnnoney in earnnoney %}
+      </div>
+
+
+
+      <div class="stepItem">
+        <div class="stepNumber">{{ earnnoney.numbers }}</div>
+        <article>
+          <p>{{ earnnoney.title }}</p>
+          <h5>{{ earnnoney.descriptions|default:"" }}</h5>
+        </article>
+      </div>
+
+
+      {% if forloop.last %}
+      {% else %}
+      <div class="stepLine">
+
+        {% endif %}
+        {% endfor %}
+
+      </div>
+
+
+
+
+
     </div>
-    <div class="stepItem">
-      <div>{{ earnnoney.numbers }}</div>
-      <article>
-        <p>{{ earnnoney.title }}</p>
-        <h5>{{ earnnoney.descriptions|default:"" }}</h5>
-      </article>
-    </div>
-
-
-    {% if forloop.last %}
-    {% else %}
-    <div class="stepLine">
-
-      {% endif %}
-      {% endfor %}
-
-    </div>
-
-
-
-
-
   </div>
   </div>
 </section>

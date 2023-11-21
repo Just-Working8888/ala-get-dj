@@ -4,7 +4,7 @@
 
     const mySwiper = new Swiper('.swiper-container', {
 
-        loop: true,
+        loop: false,
 
         slidesPerView: 'auto',
         centeredSlides: false,
